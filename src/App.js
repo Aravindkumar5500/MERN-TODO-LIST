@@ -6,16 +6,20 @@ import Login from './page/Login'
 import Register from './page/Register';
 import Update from './page/Update';
 import Delete from './page/Delete';
+// import Private from './page/Private';
 
 
 function App() {
   return (
     <div className="App">
+
+
    
         <Routes>
+          {/* <Route path='/logout' element={<Private/>} />  */}
           <Route path='/task' element={<Task/>} />
           <Route path='/update/:id' element={<Update/>} />
-          <Route path='/login' element={< Login/>} />
+          <Route path='/' element={< Login/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/delete/:id' element={<Delete/>} />
         </Routes>
