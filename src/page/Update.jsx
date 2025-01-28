@@ -13,13 +13,14 @@ const Update = () => {
 
   const update = async()=>{
     
-      const updateValue = await axios.put("http://localhost:3001/update/"+paramvalue.id,{task:input})
+      const updateValue = await axios.put("http://localhost:3001/update/"+paramvalue.id,{task:input},{headers:{token:sessionStorage.getItem("token")}})
       console.log(updateValue)
 
-      if (updateValue.status === 200) {
+      if (updateValue.data.status === 200) {
+        alert('Updated successfully')
         nav('/task')
       }else {
-        // alert('something went wrong for Update ')
+        alert('Update failed')
         console.error(updateValue)
       }
     
@@ -29,8 +30,8 @@ const Update = () => {
   return (
     <div>
       <from>
-      <input onChange={(e)=>setInput(e.target.value)} placeholder='Enter Task'/>
-      <button type='button' onClick={update}>Update</button>
+      <input onChange={(e)=>setInput(e.target.value)} style={{margin:"25px"}} type='text' placeholder='Enter Task'/>
+      <button type='button' onClick={update} className='btn btn-primary'>Update</button>
       </from>
     </div>
   )
