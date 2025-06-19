@@ -10,7 +10,7 @@ This is the frontend of a full-stack To-Do List application developed using Reac
 
 ## 📸 Screenshot
 ![![todolist](https://github.com/user-attachments/assets/4cc1863a-ad16-42a9-b6d1-09da5066bfc0)
-](screenshot.png)
+](todolist.png)
 
 ## 🌐 Live Demo
 Coming soon...
